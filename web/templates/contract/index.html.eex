@@ -1,1 +1,18 @@
-<h1>Contracts</h1>
+<h5>Contracts</h5>
+
+<ul class="collection">
+  <%= for contract <- @contracts do %>
+    <li class="collection-item">
+      <%= link contract.start_date, to: contract_path(@conn, :show, contract) %>
+      <%= contract.end_date %>
+      <%= contract.renewable %>
+
+    </li>
+  <% end %>
+</ul>
+
+<div class="fixed-action-btn">
+  <%= link to: contract_path(@conn, :new), class: "btn-floating btn-large waves-effect waves-light red" do %>
+    <i class="material-icons">add</i>
+  <% end %>
+</div>
