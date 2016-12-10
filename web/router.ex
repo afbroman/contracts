@@ -16,7 +16,7 @@ defmodule Contracts.Router do
   scope "/", Contracts do
     pipe_through :browser # Use the default browser stack
 
-    get "/", PageController, :index
+    get "/", ContractController, :index
   end
 
   # Other scopes may use custom stacks.
