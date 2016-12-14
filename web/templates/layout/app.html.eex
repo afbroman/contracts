@@ -16,7 +16,7 @@
   <body>
     <nav class="light-blue">
       <div class="nav-wrapper container">
-        <a href="/" class="brand-logo">Contracts</a>
+        <a href="/" class="brand-logo">Contracts App</a>
       </div>
     </nav>
     <div class="container">

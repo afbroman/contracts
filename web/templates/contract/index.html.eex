@@ -1,15 +1,22 @@
 <h5>Contracts</h5>
-
-<ul class="collection">
-  <%= for contract <- @contracts do %>
-    <li class="collection-item">
-      <%= link contract.start_date, to: contract_path(@conn, :show, contract) %>
-      <%= contract.end_date %>
-      <%= contract.renewable %>
-
-    </li>
-  <% end %>
-</ul>
+<table>
+  <thead>
+    <tr>
+      <th data-field="start_date">Start Date</th>
+      <th data-field="end_date">End Date</th>
+      <th data-field="renewable">Renewable</th>
+    </tr>
+  </thead>
+  <tbody class="collection">
+    <%= for contract <- @contracts do %>
+      <tr class="collection-item">
+        <td><%= link contract.start_date, to: contract_path(@conn, :show, contract) %></td>
+        <td><%= contract.end_date %></td>
+        <td><%= contract.renewable %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <div class="fixed-action-btn">
   <%= link to: contract_path(@conn, :new), class: "btn-floating btn-large waves-effect waves-light red" do %>
